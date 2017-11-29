@@ -1,0 +1,157 @@
+The first three were all trained on BGR (a mistake)!
+
+  r1.h5: data, data2, data3, data5 with 5 epochs
+    A little close (outside) on the turn before the bridge.
+
+    (carnd-term1) F:\sdc\sdc_proj_3>python model.py
+    Using TensorFlow backend.
+    Image info (26226, 160, 320, 3) uint8
+    Angle info (26226,) float32
+    Train on 20980 samples, validate on 5246 samples
+    Epoch 1/5
+    2017-11-29 21:52:16.390500: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+    2017-11-29 21:52:16.390580: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+    2017-11-29 21:52:16.713901: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:955] Found device 0 with properties:
+    name: GeForce GTX 1070
+    major: 6 minor: 1 memoryClockRate (GHz) 1.645
+    pciBusID 0000:02:00.0
+    Total memory: 8.00GiB
+    Free memory: 6.65GiB
+    2017-11-29 21:52:16.714041: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:976] DMA: 0
+    2017-11-29 21:52:16.715859: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:986] 0:   Y
+    2017-11-29 21:52:16.715942: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+    20980/20980 [==============================] - 22s - loss: 0.0081 - val_loss: 0.0095
+    Epoch 2/5
+    20980/20980 [==============================] - 20s - loss: 0.0073 - val_loss: 0.0109
+    Epoch 3/5
+    20980/20980 [==============================] - 20s - loss: 0.0071 - val_loss: 0.0082
+    Epoch 4/5
+    20980/20980 [==============================] - 20s - loss: 0.0068 - val_loss: 0.0081
+    Epoch 5/5
+    20980/20980 [==============================] - 20s - loss: 0.0066 - val_loss: 0.0093
+
+  r2.h5: Shon00, Nat00, Nat01, data, data2, data3, data5 with 5 epochs
+    Crosses lines several times.
+
+    (carnd-term1) F:\sdc\sdc_proj_3>python model.py
+    Using TensorFlow backend.
+    Image info (55624, 160, 320, 3) uint8
+    Angle info (55624,) float32
+    Train on 44499 samples, validate on 11125 samples
+    Epoch 1/5
+    2017-11-29 22:24:21.879190: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+    2017-11-29 22:24:21.879259: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+    2017-11-29 22:24:22.207488: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:955] Found device 0 with properties:
+    name: GeForce GTX 1070
+    major: 6 minor: 1 memoryClockRate (GHz) 1.645
+    pciBusID 0000:02:00.0
+    Total memory: 8.00GiB
+    Free memory: 6.65GiB
+    2017-11-29 22:24:22.207629: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:976] DMA: 0
+    2017-11-29 22:24:22.209339: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:986] 0:   Y
+    2017-11-29 22:24:22.209425: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+    44499/44499 [==============================] - 45s - loss: 0.0048 - val_loss: 0.0067
+    Epoch 2/5
+    44499/44499 [==============================] - 44s - loss: 0.0041 - val_loss: 0.0072
+    Epoch 3/5
+    44499/44499 [==============================] - 43s - loss: 0.0039 - val_loss: 0.0074
+    Epoch 4/5
+    44499/44499 [==============================] - 44s - loss: 0.0038 - val_loss: 0.0078
+    Epoch 5/5
+    44499/44499 [==============================] - 43s - loss: 0.0036 - val_loss: 0.0072
+
+  r3.h5: data, data2, data3, data5, data6 with 5 epochs and 0.5 dropout on fully connected layers.
+    Not close before bridge, but a bit close on other turns.
+
+    (carnd-term1) F:\sdc\sdc_proj_3>python model.py
+    Using TensorFlow backend.
+    Image info (29074, 160, 320, 3) uint8
+    Angle info (29074,) float32
+    Train on 23259 samples, validate on 5815 samples
+    Epoch 1/5
+    2017-11-29 23:47:57.765201: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+    2017-11-29 23:47:57.765348: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+    2017-11-29 23:47:58.096085: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:955] Found device 0 with properties:
+    name: GeForce GTX 1070
+    major: 6 minor: 1 memoryClockRate (GHz) 1.645
+    pciBusID 0000:02:00.0
+    Total memory: 8.00GiB
+    Free memory: 6.65GiB
+    2017-11-29 23:47:58.096233: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:976] DMA: 0
+    2017-11-29 23:47:58.098257: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:986] 0:   Y
+    2017-11-29 23:47:58.098360: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+    23259/23259 [==============================] - 25s - loss: 0.0107 - val_loss: 0.0061
+    Epoch 2/5
+    23259/23259 [==============================] - 23s - loss: 0.0087 - val_loss: 0.0044
+    Epoch 3/5
+    23259/23259 [==============================] - 23s - loss: 0.0083 - val_loss: 0.0046
+    Epoch 4/5
+    23259/23259 [==============================] - 22s - loss: 0.0081 - val_loss: 0.0042
+    Epoch 5/5
+    23259/23259 [==============================] - 23s - loss: 0.0080 - val_loss: 0.0050
+
+The below were trained on RGB:
+
+  r4.h5: data1; dr=(0.1, 0.5)
+
+    (carnd-term1) F:\sdc\sdc_proj_3>python model.py
+    Image info (16010, 160, 320, 3) uint8
+    Angle info (16010,) float32
+    Using TensorFlow backend.
+    Train on 12808 samples, validate on 3202 samples
+    Epoch 1/5
+    2017-12-02 12:25:36.659849: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+    2017-12-02 12:25:36.659976: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+    2017-12-02 12:25:36.948755: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:955] Found device 0 with properties:
+    name: GeForce GTX 1070
+    major: 6 minor: 1 memoryClockRate (GHz) 1.645
+    pciBusID 0000:02:00.0
+    Total memory: 8.00GiB
+    Free memory: 6.65GiB
+    2017-12-02 12:25:36.948938: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:976] DMA: 0
+    2017-12-02 12:25:36.952184: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:986] 0:   Y
+    2017-12-02 12:25:36.952296: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+    12808/12808 [==============================] - 16s - loss: 0.0140 - val_loss: 0.0085
+    Epoch 2/5
+    12808/12808 [==============================] - 13s - loss: 0.0116 - val_loss: 0.0087
+    Epoch 3/5
+    12808/12808 [==============================] - 13s - loss: 0.0111 - val_loss: 0.0082
+    Epoch 4/5
+    12808/12808 [==============================] - 13s - loss: 0.0108 - val_loss: 0.0081
+    Epoch 5/5
+    12808/12808 [==============================] - 13s - loss: 0.0108 - val_loss: 0.0081
+
+The above didn't properly shuffle before passing the data to model.fit!
+
+  r5.h5: data1, data2; dr=(0.1, 0.5); side cameras with adjust = 0.1
+
+    (carnd-term1) F:\sdc\sdc_proj_3>python model.py
+    Loading dataset from: ./data1\driving_log.csv
+      Adding side camera images with angle adjustment: 0.1
+    Loading dataset from: ./data2\driving_log.csv
+      Adding side camera images with angle adjustment: 0.1
+    Image info (64650, 160, 320, 3) uint8
+    Angle info (64650,) float32
+    Using TensorFlow backend.
+    Train on 51720 samples, validate on 12930 samples
+    Epoch 1/5
+    2017-12-02 15:19:53.872165: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+    2017-12-02 15:19:53.872452: W C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\platform\cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+    2017-12-02 15:19:54.157655: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:955] Found device 0 with properties:
+    name: GeForce GTX 1070
+    major: 6 minor: 1 memoryClockRate (GHz) 1.645
+    pciBusID 0000:02:00.0
+    Total memory: 8.00GiB
+    Free memory: 6.65GiB
+    2017-12-02 15:19:54.157808: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:976] DMA: 0
+    2017-12-02 15:19:54.161223: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:986] 0:   Y
+    2017-12-02 15:19:54.161352: I C:\tf_jenkins\home\workspace\rel-win\M\windows-gpu\PY\35\tensorflow\core\common_runtime\gpu\gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1070, pci bus id: 0000:02:00.0)
+    51720/51720 [==============================] - 58s - loss: 0.0113 - val_loss: 0.0095
+    Epoch 2/5
+    51720/51720 [==============================] - 55s - loss: 0.0099 - val_loss: 0.0086
+    Epoch 3/5
+    51720/51720 [==============================] - 55s - loss: 0.0096 - val_loss: 0.0080
+    Epoch 4/5
+    51720/51720 [==============================] - 55s - loss: 0.0094 - val_loss: 0.0081
+    Epoch 5/5
+    51720/51720 [==============================] - 56s - loss: 0.0092 - val_loss: 0.0078
